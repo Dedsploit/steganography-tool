@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography Analysis Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Steganography Analysis Tool</h1>
+            <p class="subtitle">Detect and extract hidden data from images, audio, and video files</p>
+        </header>
+
+        <main>
+            <!-- File Upload Section -->
+            <section class="upload-section">
+                <h2>Upload File for Analysis</h2>
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p>Drag and drop a file here, or click to select</p>
+                        <p class="file-types">Supported: Images (PNG, JPG, JPEG, BMP, TIFF, GIF), Audio (WAV, MP3, FLAC, OGG, M4A), Video (MP4, AVI, MOV, MKV, FLV)</p>
+                        <input type="file" id="fileInput" accept=".png,.jpg,.jpeg,.bmp,.tiff,.gif,.wav,.mp3,.flac,.ogg,.m4a,.mp4,.avi,.mov,.mkv,.flv" style="display: none;">
+                    </div>
+                </div>
+                <div class="upload-actions">
+                    <button id="createSamplesBtn" class="btn btn-secondary">Create Sample Files</button>
+                    <button id="clearSessionBtn" class="btn btn-secondary">Clear Session</button>
+                </div>
+            </section>
+
+            <!-- Analysis Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Analysis Results</h2>
+                <div id="resultsContainer"></div>
+            </section>
+
+            <!-- Report Generation Section -->
+            <section class="report-section" id="reportSection" style="display: none;">
+                <h2>Generate Report</h2>
+                <button id="generateReportBtn" class="btn btn-primary">Generate PDF Report</button>
+                <div id="reportStatus"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Steganography Analysis Tool v1.0.0</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
